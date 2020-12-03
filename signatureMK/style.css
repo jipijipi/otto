@@ -1,0 +1,13 @@
+div {
+    margin: 20px 0;
+}
+
+a {
+    border: 1px solid lightgray;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: inline-block;
+}
