@@ -1,8 +1,17 @@
 let projectID = 0;
 let projectName = '';
 let projectColor = '';
+let signatureHtml = '';
 
-document.querySelector('#download_link').addEventListener('click', makeSign);
+document.querySelector('#download_link').addEventListener('click', () => {
+    makeSign();
+    downloadSign();
+});
+
+document.querySelector('#previewBtn').addEventListener('click', () => {
+    makeSign();
+    preview();
+});
 
 function makeSign() {
     projectID = document.getElementById('projectID').value;
@@ -12,7 +21,7 @@ function makeSign() {
     let projectUrl = `https://sowefund.com/projet/${projectID}/${projectName.toLowerCase()}?utm_source=mail&utm_campaign=${projectName.toLowerCase()}&utm_medium=email&utm_content=signature`;
     let projectImg = `https://d3i3cp443mmogz.cloudfront.net/public/mails/signature/signature-${projectName.toLowerCase()}.gif`;
 
-    let signatureHtml = `<table width="" border="0" cellspacing="0" cellpadding="0">
+    signatureHtml = `<table width="" border="0" cellspacing="0" cellpadding="0">
 <tr>
   <td align="center">
     <p
@@ -38,12 +47,15 @@ function makeSign() {
   </td>
 </tr>
 </table>`;
+}
 
+function downloadSign() {
     let data = new Blob([signatureHtml], { type: 'text/html' });
-
     var url = window.URL.createObjectURL(data);
     document.getElementById('download_link').download = `signature-${projectName.toLowerCase()}.html`;
     document.getElementById('download_link').href = url;
 }
+
+let preview = () => (document.querySelector('#preview').innerHTML = signatureHtml);
 
 //window.URL.revokeObjectURL(url);
