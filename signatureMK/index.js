@@ -1,6 +1,7 @@
 let projectID = 0;
 let projectName = '';
 let projectColor = '';
+let projectPathName = '';
 let signatureHtml = '';
 
 document.querySelector('#download_link').addEventListener('click', () => {

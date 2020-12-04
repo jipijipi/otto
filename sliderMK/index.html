@@ -10,7 +10,42 @@
 </head>
 
 <body>
+  <div id="sliderBlock">
+    <form action="" id="projectSlider">
+      <div>
+        <label for="projectName">Nom du projet</label>
+        <input type="text" id="projectName">
+      </div>
+      <div>
+        <label for="projectURL">URL du projet</label>
+        <input type="text" id="projectURL" value="https://sowefund.com/projet/94/mainbot">
+      </div>
+      <div>
+        <label for="descriptionLine1">Description ligne 1</label>
+        <input type="text" id="descriptionLine1">
+      </div>
+      <div>
+        <label for="descriptionLine2">Description ligne 2</label>
+        <input type="text" id="descriptionLine2">
+      </div>
+      <div>
+        <label for="retinaReady">Retina ?</label>
+        <input type="checkbox" id="retinaReady" value="1" checked>
+      </div>
+      <div>
+        <label for="defiscReady">Défisc ?</label>
+        <input type="checkbox" id="defiscReady" value="1" checked>
+      </div>
 
+    </form>
+
+
+    <button id="previewBtn" class="borderman btn-border">preview</button>
+
+    <div id="preview" width="300" height="134"></div>
+
+    <a id="download_link" download="" href=”” class="borderman btn-border">download HTML</a>
+  </div>
 </body>
 
 </html>
